@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import ImgSlider from './imgSlider';
+import NewDisney from './NewDisney';
+import Originals from './Originals';
 import Recommonds from './Recommends';
+import Trending from './Trending';
 import Viewers from './Viewers';
 
 function Home() {
@@ -9,6 +12,9 @@ function Home() {
             <ImgSlider />
             <Viewers />
             <Recommonds />
+            <NewDisney />
+            <Originals />
+            <Trending />
         </Container>
     )
 }
