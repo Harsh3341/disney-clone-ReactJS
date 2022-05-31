@@ -13,14 +13,15 @@ function Header(props) {
     const userName = useSelector(selectUserName);
     const userPhoto = useSelector(selectUserPhoto);
 
-    useEffect((navigate, setUser) => {
+    useEffect(() => {
+        
         auth.onAuthStateChanged(async (user) => {
             if (user) {
                 setUser(user);
                 navigate("/home");
             }
         })
-    }, [userName]);
+    }, [userName]);// eslint-disable-line react-hooks/exhaustive-deps
 
     function handleAuth() {
         if (!userName) {
