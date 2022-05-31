@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ImgSlider from './imgSlider';
+import Recommonds from './Recommends';
 import Viewers from './Viewers';
 
 function Home() {
@@ -7,6 +8,7 @@ function Home() {
         <Container>
             <ImgSlider />
             <Viewers />
+            <Recommonds />
         </Container>
     )
 }
