@@ -5,8 +5,58 @@ import Originals from './Originals';
 import Recommonds from './Recommends';
 import Trending from './Trending';
 import Viewers from './Viewers';
+import db from '../firebase';
+import { setMovies } from '../features/movie/movieSlice';
+import { selectUserName } from '../features/user/userSlice'
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { collection, query, onSnapshot } from "firebase/firestore";
 
-function Home() {
+
+function Home(props) {
+
+    const dispatch = useDispatch();
+    const userName = useSelector(selectUserName);
+
+
+    useEffect(() => {
+
+        const q = query(collection(db, "movies"));
+        let recommends = [];
+        let newDisneys = [];
+        let originals = [];
+        let trending = [];
+
+        onSnapshot(q, (snapshot) => {
+            snapshot.docs.forEach((doc) => {
+                switch (doc.data().type) {
+                    case 'recommend':
+                        recommends = [...recommends, { id: doc.id, ...doc.data() }]
+                        break;
+                    case 'new':
+                        newDisneys = [...newDisneys, { id: doc.id, ...doc.data() }]
+                        break;
+                    case 'original':
+                        originals = [...originals, { id: doc.id, ...doc.data() }]
+                        break;
+                    case 'trending':
+                        trending = [...trending, { id: doc.id, ...doc.data() }]
+                        break;
+                    default:
+                        console.log("Hoi");
+                }
+            });
+        });
+
+
+        dispatch(setMovies({
+            recommend: recommends,
+            newDisney: newDisneys,
+            original: originals,
+            trending: trending
+        }))
+    }, [userName]);// eslint-disable-line react-hooks/exhaustive-deps
+
     return (
         <Container>
             <ImgSlider />

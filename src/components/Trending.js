@@ -9,22 +9,22 @@ function Trending() {
             <Content>
                 <Wrap>
                     <Link to='/'>
-                        <img src="/images/logo.svg" alt="" />
+                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FA1548A6B82C9991B1D38DF251A388FEA2483904510FBC73E150F67F7BDE38C0/scale?width=1440&aspectRatio=1.78&format=jpeg" alt="" />
                     </Link>
                 </Wrap>
                 <Wrap>
                     <Link to='/'>
-                        <img src="/images/logo.svg" alt="" />
+                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FA1548A6B82C9991B1D38DF251A388FEA2483904510FBC73E150F67F7BDE38C0/scale?width=1440&aspectRatio=1.78&format=jpeg" alt="" />
                     </Link>
                 </Wrap>
                 <Wrap>
                     <Link to='/'>
-                        <img src="/images/logo.svg" alt="" />
+                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FA1548A6B82C9991B1D38DF251A388FEA2483904510FBC73E150F67F7BDE38C0/scale?width=1440&aspectRatio=1.78&format=jpeg" alt="" />
                     </Link>
                 </Wrap>
                 <Wrap>
                     <Link to='/'>
-                        <img src="/images/logo.svg" alt="" />
+                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FA1548A6B82C9991B1D38DF251A388FEA2483904510FBC73E150F67F7BDE38C0/scale?width=1440&aspectRatio=1.78&format=jpeg" alt="" />
                     </Link>
                 </Wrap>
             </Content>
