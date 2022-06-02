@@ -1,32 +1,27 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectTrending } from "../features/movie/movieSlice";
 
 
 function Trending() {
+
+    const movies = useSelector(selectTrending);
+
     return (
         <Container>
             <h4>Trending</h4>
             <Content>
-                <Wrap>
-                    <Link to='/'>
-                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FA1548A6B82C9991B1D38DF251A388FEA2483904510FBC73E150F67F7BDE38C0/scale?width=1440&aspectRatio=1.78&format=jpeg" alt="" />
-                    </Link>
-                </Wrap>
-                <Wrap>
-                    <Link to='/'>
-                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FA1548A6B82C9991B1D38DF251A388FEA2483904510FBC73E150F67F7BDE38C0/scale?width=1440&aspectRatio=1.78&format=jpeg" alt="" />
-                    </Link>
-                </Wrap>
-                <Wrap>
-                    <Link to='/'>
-                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FA1548A6B82C9991B1D38DF251A388FEA2483904510FBC73E150F67F7BDE38C0/scale?width=1440&aspectRatio=1.78&format=jpeg" alt="" />
-                    </Link>
-                </Wrap>
-                <Wrap>
-                    <Link to='/'>
-                        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/FA1548A6B82C9991B1D38DF251A388FEA2483904510FBC73E150F67F7BDE38C0/scale?width=1440&aspectRatio=1.78&format=jpeg" alt="" />
-                    </Link>
-                </Wrap>
+                {
+                    movies && movies.map((movies, key) => (
+                        <Wrap key={key}>
+                            {movies.id}
+                            <Link to={'/detail/' + movies.id}>
+                                <img src={movies.cardImg} alt={movies.title} />
+                            </Link>
+                        </Wrap>
+                    )
+                    )}
             </Content>
         </Container>
     )

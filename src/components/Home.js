@@ -46,15 +46,16 @@ function Home(props) {
                         console.log("Hoi");
                 }
             });
-        });
 
 
-        dispatch(setMovies({
-            recommend: recommends,
-            newDisney: newDisneys,
-            original: originals,
-            trending: trending
-        }))
+
+            dispatch(setMovies({
+                recommend: recommends,
+                newDisney: newDisneys,
+                original: originals,
+                trending: trending
+            }))
+        })
     }, [userName]);// eslint-disable-line react-hooks/exhaustive-deps
 
     return (
